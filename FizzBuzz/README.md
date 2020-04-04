@@ -2,7 +2,7 @@
 
 ### Purpose
 
-### RUn Instructions
+### Run Instructions
 
 ### Code
 ```cpp
