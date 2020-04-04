@@ -33,8 +33,8 @@ int main()
 {
 	std::string T_num, N_numbers; // Declar strings which will be inputted by the user
 
-    // Using getline over standard cout because we need the entire line as a string
-    std::getline(std::cin, T_num); // Get the number T
+	// Using getline over standard cout because we need the entire line as a string
+	std::getline(std::cin, T_num); // Get the number T
 	std::getline(std::cin, N_numbers); // Get the T numbers of int number (N)
 
 	int T = std::stoi(T_num); // Convert to int datatype
@@ -44,11 +44,11 @@ int main()
 	// Extract Integers from the String
 	std::istringstream iss (N_numbers); // Extract to int array from string
 	for (int i=0; i<T; i++) // Perform extraction by looping through the entire array
-  	{
-    	int val; // temp variable
-    	iss >> val; // assign it to var
-    	int_array[i] = val; // append it to the int array
-  	}
+	{
+		int val; // temp variable
+		iss >> val; // assign it to var
+		int_array[i] = val; // append it to the int array
+	}
 
 	// Loop through and find the Fizz Buzz as required
 	for (int i = 0; i < T; i++) // loop through all array elements in the Int Array
