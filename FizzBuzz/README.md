@@ -46,6 +46,19 @@ N is an integer.
 
 ### Run Instructions
 
+Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./FizzBuzz` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
+
+`make all`: compiles the C++ file into an executable file, `FizzBuzz`
+
+`make run`: compiles the C++ file into an executable file, `FizzBuzz` and starts the `FizzBuzz` program
+
+`make clean`: removes all of the compiled files, `FizzBuzz`. Keeps the source code intact.
+
+
+### Program Demo
+![Fizz Buzz Demo](FizzBuzz_Demo.gif)
+
+
 ### Code
 ```cpp
 #include <iostream> // For Input Output with user
