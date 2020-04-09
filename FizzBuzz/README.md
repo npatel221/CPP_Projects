@@ -2,20 +2,61 @@
 
 ### Purpose
 
+Develop a program that prints the numbers in the given range. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz". Print a new line after each string or number.
+
+**Input Format** First line will be the number of testcases, T. Next line will have T integers, denoted by N.
+
+**Output Format** For each testcase, print the number from 1 to N. But follow the rules given in the problem statement.
+
+**Constraints**
+
+1 <= T <= 10
+
+N is an integer.
+
+**Expected Output**
+
+| ﻿Sample Input | Sample Output |
+|--------------|---------------|
+| 2            | 1             |
+| 3 15         | 2             |
+|              | Fizz          |
+|              | 1             |
+|              | 2             |
+|              | Fizz          |
+|              | 4             |
+|              | Buzz          |
+|              | Fizz          |
+|              | 7             |
+|              | 8             |
+|              | Fizz          |
+|              | Buzz          |
+|              | 11            |
+|              | Fizz          |
+|              | 13            |
+|              | 14            |
+|              | FizzBuzz      |
+
+### Extracted Requirements
+
+1. `N` is a multiple of 3, then print "Fizz". `N % 3 == 0` &rightarrow; "Fizz"
+2. `N` is a multiple of 5, then print "Buzz". `N % 5 == 0` &rightarrow; "Buzz"
+3. `N` is a multiple of 3 and 5, then print "FizzBuzz". `(N % 3 == 0) and (N % 5 == 0)` &rightarrow; "FizzBuzz"
+4. `N` is not a multiple of 3 or 5, then print `N`. `(N % 3 != 0) and (N % 5 != 0)` &rightarrow; `N`
+
 ### Run Instructions
 
 ### Code
 ```cpp
 #include <iostream> // For Input Output with user
-#include <sstream>
 
 // This function returns a String after checking whether the provided integer is a Fizz, Buzz, both or none
 std::string check_fizz_buzz(int num)
 {
    std::string return_var = ""; // Return var declaration
 
-   bool is_fizz = (num%3) == 0; // Is the provided number a Fizz
-   bool is_buzz = (num%5) == 0; // Is the provided number a Buzz
+   bool is_fizz = (num % 3) == 0; // Is the provided number a Fizz
+   bool is_buzz = (num % 5) == 0; // Is the provided number a Buzz
 
    if(is_fizz && is_buzz) // Num is a fizz and a buzz
    {
@@ -39,34 +80,32 @@ std::string check_fizz_buzz(int num)
 
 int main()
 {
-   std::string T_num, N_numbers; // Declar strings which will be inputted by the user
+   int T; // Declare the number of testcases as T
 
-   // Using getline over standard cout because we need the entire line as a string
-   std::getline(std::cin, T_num); // Get the number T
-   std::getline(std::cin, N_numbers); // Get the T numbers of int number (N)
+   std::cin >> T; // Get the value of T from the user
 
-   int T = std::stoi(T_num); // Convert to int datatype
-
-   int int_array [T]; // Create a int array of size T which will hold N_numbers
-
-   // Extract Integers from the String
-   std::istringstream iss (N_numbers); // Extract to int array from string
-   for (int i=0; i<T; i++) // Perform extraction by looping through the entire array
+   // Check if the value of T is outside the range of 1 <= T <= 10, if outside exit the program with error code.
+   if ((T < 1) || (T > 10))
    {
-      int val; // temp variable
-      iss >> val; // assign it to var
-      int_array[i] = val; // append it to the int array
+      return 1; // Exit the program and halt execution with error code
+   }
+
+   int num[T]; // Declare array of type int to hold integers
+
+   // Add integers to the array from the user input
+   for (int i = 0; i < T; i++)
+   {
+      std::cin >> num[i]; // add elements to the array
    }
 
    // Loop through and find the Fizz Buzz as required
    for (int i = 0; i < T; i++) // loop through all array elements in the Int Array
    {
-      for (int start_num = 1; start_num <= int_array[i]; start_num++) // get a range upto and including array item
+      for (int start_num = 1; start_num <= num[i]; start_num++) // get a range upto and including array item
       {
          std::cout << check_fizz_buzz(start_num) << "\n"; // Prints the respective output after checking Fizz Buzz requirement   
       }
    }
-
    return 0; // Terminate Program after successful execution
 }
 ```
