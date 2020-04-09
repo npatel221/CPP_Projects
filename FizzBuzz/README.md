@@ -1,6 +1,23 @@
 # FizzBuzz
 
-### Purpose
+Folder Structure
+```
+FizzBuzz
+|  FizzBuzz.cpp (C++ source code file)
+|  FizzBuzz_Demo.gif (Output from the program)
+|  Makefile (helpful file for compiling the C++ program)
+|  README.md (Contains information about the program)
+
+```
+
+### Table of Contents
+1. [Purpose](#Purpose)
+2. [Extracted Requirements](#Extracted Requirements)
+3. [Run Instructions](#Run Instructions)
+4. [Program Demo](#Program Demo)
+5. [Code](#Code)
+
+### Purpose <a name="Purpose"></a>
 
 Develop a program that prints the numbers in the given range. But for multiples of three print "Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz". Print a new line after each string or number.
 
@@ -37,14 +54,14 @@ N is an integer.
 |              | 14            |
 |              | FizzBuzz      |
 
-### Extracted Requirements
+### Extracted Requirements <a name="Extracted Requirements"></a>
 
 1. `N` is a multiple of 3, then print "Fizz". `N % 3 == 0` &rightarrow; "Fizz"
 2. `N` is a multiple of 5, then print "Buzz". `N % 5 == 0` &rightarrow; "Buzz"
 3. `N` is a multiple of 3 and 5, then print "FizzBuzz". `(N % 3 == 0) and (N % 5 == 0)` &rightarrow; "FizzBuzz"
 4. `N` is not a multiple of 3 or 5, then print `N`. `(N % 3 != 0) and (N % 5 != 0)` &rightarrow; `N`
 
-### Run Instructions
+### Run Instructions <a name="Run Instructions"></a>
 
 Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./FizzBuzz` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
 
@@ -55,11 +72,11 @@ Use the provided `Makefile` and `make` command to automatically compile the C++ 
 `make clean`: removes all of the compiled files, `FizzBuzz`. Keeps the source code intact.
 
 
-### Program Demo
+### Program Demo <a name="Program Demo"></a>
 ![Fizz Buzz Demo](FizzBuzz_Demo.gif)
 
 
-### Code
+### Code <a name="Code"></a>
 ```cpp
 #include <iostream> // For Input Output with user
 
