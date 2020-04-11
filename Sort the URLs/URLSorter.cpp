@@ -4,16 +4,17 @@
 
 class Website
 {
-   std::vector<std::string> URL;
+   std::vector<std::string> URL, unique_URL;
    public:
       Website(); // Constructor
       void getMostVisitedPages(); // Returns an array of URLs in terms of popularity and sorted order
-      int count_unique_url(); // Calculates the number of unique URL in the URL_array
-      void addPage(std::string); // Adds items to the array
+      int count_unique_url(); // Calculates the number of unique URL in the URL List
+      void addPage(std::string); // Adds items to the URL List
 };
 
-Website::Website() // Initialize the Dynamic Array with a fixed size
+Website::Website()
 {
+
 }
 
 void Website::getMostVisitedPages() 
@@ -23,25 +24,23 @@ void Website::getMostVisitedPages()
 
 int Website::count_unique_url()
 {
-   std::vector<std::string> unique_URL;
-
-   for (int i = 0; i < URL.size(); i++)
+   for (int i = 0; i < URL.size(); i++) // loop through the entire URL list
    {
-      bool is_unique = true;
-      for (int x = 0; x < unique_URL.size(); x++)
+      bool is_unique = true; // initialize it to true
+      for (int x = 0; x < unique_URL.size(); x++) // loop through the entire unique URL List
       {
-         if (URL[i] == unique_URL[x])
+         if (URL[i] == unique_URL[x]) // if the item from the URL List is already in the unique URL list
          {
-            is_unique = false;
-            break;
+            is_unique = false; // set the flag to false as the value has been already added inside the unique URL list
+            break; // exit the for loop to save iterations and execution time
          }
       }
-      if(is_unique == true) // Add it to the vector
+      if(is_unique == true) // Unique URL add it to the Unique List
       {
-         unique_URL.push_back(URL[i]);
+         unique_URL.push_back(URL[i]); // append to the end of the unique URL List
       }
    }
-   return unique_URL.size();
+   return unique_URL.size(); // M parameter, # of unique URLs present in the URL List
 }
 
 void Website::addPage(std::string value)
