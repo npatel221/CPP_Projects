@@ -5,10 +5,12 @@
 class Website
 {
    std::vector<std::string> URL, unique_URL;
+
    public:
       Website(); // Constructor
       void getMostVisitedPages(); // Returns an array of URLs in terms of popularity and sorted order
       int count_unique_url(); // Calculates the number of unique URL in the URL List
+      std::vector<int> calculate_popularity();
       void addPage(std::string); // Adds items to the URL List
 };
 
@@ -43,6 +45,25 @@ int Website::count_unique_url()
    return unique_URL.size(); // M parameter, # of unique URLs present in the URL List
 }
 
+std::vector<int> Website::calculate_popularity()
+{
+   std::vector<int> popularity(unique_URL.size());
+
+   for (int i = 0; i < popularity.size(); i++)
+   {
+      int count = 0;
+      for (int x = 0; x < URL.size(); x++)
+      {  
+         if(unique_URL[i] == URL[x])
+         {
+            count++;
+         }
+      }
+      popularity[i] = count;
+   }
+   return popularity;
+}
+
 void Website::addPage(std::string value)
 {
    URL.push_back(value); // Add value
@@ -68,13 +89,12 @@ int main()
       my_website_instance.addPage(temp);
    }
 
-
-   // std::string* output = my_website_instance.getMostVisitedPages();
-   // for (int i = 0; i < num_URLS; i++)
-   // {
-   //    std::cout << output[i] << "\n";
-   // }
-   std::cout << my_website_instance.count_unique_url();
+   std::cout << "# of Unique URLs: " << my_website_instance.count_unique_url() << "\n";
+   std::vector<int> out_test = my_website_instance.calculate_popularity();
+   for(int i = 0; i < out_test.size(); i++)
+   {
+      std::cout << out_test[i] << "\n";
+   }
 
    return 0;
 }
