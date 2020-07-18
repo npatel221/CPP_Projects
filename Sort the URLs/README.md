@@ -25,11 +25,15 @@ Develop a program that displays the most popular URLs on the basis of a survey w
 
 - First Line: `N`</br>
 
-- Next `N` lines: String `S` (where the <code>i<sup>th</sup></code> line corresponds to the URL that is visited by the <code>i<sup>th</sup></code> user)
+- Next `N` lines: String `S` (where the <code>i<sup>th</sup></code> line corresponds to the URL that is visited by the <code>i<sup>th</sup></code> user)</br>
 
-**Output Format**
+**Output Format**</br>
 
-**Constraints**
+Print an integer `M` denoting the number of unique URLs accessed by the users and the URLs in decreasing order of popularity in the next `M` lines. If the number of visits of any two URLs is the same, then display them in increasing lexicographical order.</br>
+
+**Constraints**</br>
+1 $\le N <= 10<sup>5</sup></br>
+1 <= $$ |S| $$ <= 100
 
 **Expected Output**
 
