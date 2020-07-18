@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "5"
 echo "https://www.hackerearth.com"
 echo "https://www.wikipedia.org"
