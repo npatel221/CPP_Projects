@@ -56,11 +56,8 @@ void Website::addPage(string page)
          if (dictionary[i].first == page)
          {
             found = true;
-            break;
-         }
-         if (found == true)
-         {
             dictionary[i].second++;
+            break;
          }
       }
       if (found == false)
@@ -77,6 +74,7 @@ vector<string> Website::getMostVisitedPages() const
    for (int i = 0; i < dictionary.size(); i++)
    {
       return_list.push_back(dictionary[i].first);
+      cout << "URL: " << dictionary[i].first << " count: " << dictionary[i].second << endl;
    }
    return return_list;
 }
