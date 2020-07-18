@@ -8,27 +8,30 @@ using namespace std;
 class Website
 {
    public:
+      // public variables
+
+      // public functions / members
       Website(int number_of_URL); // Constructor
       ~Website(){}; // Destructor
-
-      //bool sortByVal(const std::pair<std::string, int> &a, const std::pair<std::string, int> &b);
       void addPage(string page); // Adds the page to the Vector
       vector<string> getMostVisitedPages() const; // Returns a vector of URLs in terms of popularity and sorted order
    
    private:
-      // Implementing a vector with pair
-      vector<pair <string, int>> dictionary;
-      int num_URLs;
+      // private variables
+      vector<pair <string, int>> dictionary; // Implementing a vector with pair
+      int num_URLs; // total number of URLs provided by the user
+
+      // private functions / members
+      static bool sortByVal(const pair<string, int> &a, const pair<string, int> &b);
 
 };
 
 Website::Website(int number_of_URL)
 {
    num_URLs = number_of_URL;
-   cout << "# of URLs: " << num_URLs << endl;
 }
 
-bool sortByVal(const std::pair<std::string, int> &a, const std::pair<std::string, int> &b)
+bool Website::sortByVal(const pair<string, int> &a, const pair<string, int> &b)
 {
    if (a.second == b.second)
    {
@@ -74,7 +77,6 @@ vector<string> Website::getMostVisitedPages() const
    for (int i = 0; i < dictionary.size(); i++)
    {
       return_list.push_back(dictionary[i].first);
-      cout << "URL: " << dictionary[i].first << " count: " << dictionary[i].second << endl;
    }
    return return_list;
 }
@@ -104,7 +106,7 @@ int main()
    }
 
    vector<string> sorted_URLs = myWebsiteinstance.getMostVisitedPages();
-   cout << "Size of return: " << sorted_URLs.size() << endl;
+   cout << sorted_URLs.size() << endl;
    for (int i = 0; i < sorted_URLs.size(); i++)
    {
       cout << sorted_URLs[i] << endl;
