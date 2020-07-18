@@ -6,8 +6,8 @@ Sort the URLs
 |  Makefile (helpful file for compiling the C++ program)
 |  README.md (contains information about the program)
 |  URLSorter.cpp (C++ source code file)
+|  URLSorter_Demo.gif (output from the program)
 |  out_test (bash script file for automatic input testing)
-|  .gif (output from the program)
 ```
 
 ### Table of Contents
@@ -73,6 +73,7 @@ https://www.hackerearth.com is visited 3 times so it is displayed first, now the
 ### Run Instructions <a name="Run_Instructions"></a>
 
 ### Program Demo <a name="Program_Demo"></a>
+![URL Sorter Demo](URLSorter_Demo.gif)
 
 ### Code <a name="Code"></a>
 ```cpp
