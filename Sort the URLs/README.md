@@ -105,7 +105,7 @@ Use the provided `Makefile` and `make` command to automatically compile the C++ 
 ### Program Demo <a name="Program_Demo"></a>
 <p align="center">
 ![URL Sorter Demo](images/URLSorter_Demo.gif)
-</p>
+</p></br>
 
 ### Code <a name="Code"></a>
 ```cpp
