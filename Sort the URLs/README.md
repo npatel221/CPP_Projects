@@ -103,7 +103,7 @@ Use the provided `Makefile` and `make` command to automatically compile the C++ 
 `make clean`: removes all of the compiled files, `URLSorter`. Keeps the source code intact.
 
 ### Program Demo <a name="Program_Demo"></a>
-<center>![URL Sorter Demo](images/URLSorter_Demo.gif)</center>
+![URL Sorter Demo](images/URLSorter_Demo.gif)
 
 ### Code <a name="Code"></a>
 ```cpp
