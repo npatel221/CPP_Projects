@@ -19,9 +19,10 @@ Sort the URLs
    1.5. [Expected Output](#Expected_Output)</br>
    1.6. [Explanation](#Explanation)</br>
 2. [Extracted Requirements](#Extracted_Requirements)
-3. [Run Instructions](#Run_Instructions)
-4. [Program Demo](#Program_Demo)
-5. [Code](#Code)
+3. [Class Diagram](#Class_Diagram)
+4. [Run Instructions](#Run_Instructions)
+5. [Program Demo](#Program_Demo)
+6. [Code](#Code)
 
 ### Purpose <a name="Purpose"></a>
 
@@ -51,7 +52,7 @@ You can use extra attributes or methods in the `Website` class.</br>
 2. Main class </br>
 This class will be provided to you and it is responsible for taking inputs from the user.</br>
 
-**Expected Output** <a name="Expected_Output"></a>
+**Expected Output** <a name="Expected_Output"></a><center>
 
 |         Sample Input           |        Sample Output           |
 |:---------------------------:   |:---------------------------:   |
@@ -62,13 +63,32 @@ This class will be provided to you and it is responsible for taking inputs from 
 | https://www.hackerearth.com    |                                |
 | https://www.hackerearth.com    |                                |
 
+</center>
+
 **Explanation** <a name="Explanation"></a>
 
 Number of unique url's are 3: https://www.wikipedia.org, https://www.google.com, https://www.hackerearth.com</br>
 
-https://www.hackerearth.com is visited 3 times so it is displayed first, now the number of visits of both the websites https://www.google.com and https://www.wikipedia.org is same, the program needs to display according to the lexiographical order so www.google.com is displayed before www.wikipedia.org.</br>
+https://www.hackerearth.com is visited 3 times so it is displayed first, now the number of visits of both the websites https://www.google.com and https://www.wikipedia.org is same, the program needs to display according to the lexicographical order so www.google.com is displayed before www.wikipedia.org.</br>
 
 ### Extracted Requirements <a name="Extracted_Requirements"></a>
+
+1. `N` = number of URL's the user will enter &rightarrow; type int</br>
+2. `S` = URL visited by the user &rightarrow; type string</br> 
+3. `M` = number of unique URL's from the user &rightarrow; type int</br>
+4. Sort criteria: </br>
+   4.1. Decreasing order of popularity &rightarrow; decreasing `M` value.</br>
+   4.2. `M` value same for any URLs &rightarrow; sort by alphabetical order of the url (lexicographical).</br>
+5. `Website` class: will take the response from the user entry, count unique URL's and sort it. </br>
+   5.1. `getMostVisitedPages`: returns a list containing the most visited URLs in a sorted order. </br>
+   5.2. `addPage`: adds a URL to the list.</br>
+
+### Class Diagram <a name="Class_Diagram"></a>
+
+<center>![Vector with Dictionary Pair datatype](images/Datatype_illustration.png)</center>
+<center>**Created datatype of vector with pairs. Vector(string: URL name, int: URL visit count)**</center></br>
+
+<center>![Class Diagram of the implemented solution](images/class_diagram.png)</center>
 
 ### Run Instructions <a name="Run_Instructions"></a>
 
@@ -83,7 +103,7 @@ Use the provided `Makefile` and `make` command to automatically compile the C++ 
 `make clean`: removes all of the compiled files, `URLSorter`. Keeps the source code intact.
 
 ### Program Demo <a name="Program_Demo"></a>
-![URL Sorter Demo](URLSorter_Demo.gif)
+<center>![URL Sorter Demo](images/URLSorter_Demo.gif)</center>
 
 ### Code <a name="Code"></a>
 ```cpp
