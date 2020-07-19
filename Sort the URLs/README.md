@@ -72,6 +72,16 @@ https://www.hackerearth.com is visited 3 times so it is displayed first, now the
 
 ### Run Instructions <a name="Run_Instructions"></a>
 
+Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./URLSorter` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
+
+`make all`: compiles the C++ file into an executable file, `URLSorter`
+
+`make run`: compiles the C++ file into an executable file, `URLSorter` and starts the `URLSorter` program
+
+`make test`: compiles the C++ file into an executable file, `URLSorter` and provides the `URLSorter` with sample input from the bash script `out_test`
+
+`make clean`: removes all of the compiled files, `URLSorter`. Keeps the source code intact.
+
 ### Program Demo <a name="Program_Demo"></a>
 ![URL Sorter Demo](URLSorter_Demo.gif)
 
