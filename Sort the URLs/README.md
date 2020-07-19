@@ -3,6 +3,7 @@
 Folder Structure
 ```
 Sort the URLs
+|  images (contains images used by the README.md file)
 |  Makefile (helpful file for compiling the C++ program)
 |  README.md (contains information about the program)
 |  URLSorter.cpp (C++ source code file)
@@ -53,7 +54,6 @@ You can use extra attributes or methods in the `Website` class.</br>
 This class will be provided to you and it is responsible for taking inputs from the user.</br>
 
 **Expected Output** <a name="Expected_Output"></a>
-<p align="center">
 
 |         Sample Input           |        Sample Output           |
 |:---------------------------:   |:---------------------------:   |
@@ -63,8 +63,6 @@ This class will be provided to you and it is responsible for taking inputs from 
 |    https://www.google.com      |  https://www.wikipedia.org     |
 | https://www.hackerearth.com    |                                |
 | https://www.hackerearth.com    |                                |
-
-</p>
 
 **Explanation** <a name="Explanation"></a>
 
