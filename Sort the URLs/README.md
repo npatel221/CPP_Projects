@@ -85,10 +85,15 @@ https://www.hackerearth.com is visited 3 times so it is displayed first, now the
 
 ### Class Diagram <a name="Class_Diagram"></a>
 
-<center>![Vector with Dictionary Pair datatype](images/Datatype_illustration.png)</center>
-<center>**Created datatype of vector with pairs. Vector(string: URL name, int: URL visit count)**</center></br>
+<p align="center">
+  <img src="images/Datatype_illustration.png"/></br>
+  <b>Created datatype of vector with pairs. Vector(string: URL name, int: URL visit count)</b></br>
+</p>
 
-<center>![Class Diagram of the implemented solution](images/class_diagram.png)</center>
+
+<p align="center">
+  <img src="images/class_diagram.png"/>
+</p>
 
 ### Run Instructions <a name="Run_Instructions"></a>
 
