@@ -52,7 +52,8 @@ You can use extra attributes or methods in the `Website` class.</br>
 2. Main class </br>
 This class will be provided to you and it is responsible for taking inputs from the user.</br>
 
-**Expected Output** <a name="Expected_Output"></a><center>
+**Expected Output** <a name="Expected_Output"></a>
+<p align="center">
 
 |         Sample Input           |        Sample Output           |
 |:---------------------------:   |:---------------------------:   |
@@ -63,7 +64,7 @@ This class will be provided to you and it is responsible for taking inputs from 
 | https://www.hackerearth.com    |                                |
 | https://www.hackerearth.com    |                                |
 
-</center>
+</p>
 
 **Explanation** <a name="Explanation"></a>
 
@@ -89,8 +90,6 @@ https://www.hackerearth.com is visited 3 times so it is displayed first, now the
   <img src="images/Datatype_illustration.png"/></br>
   <b>Created datatype of vector with pairs. Vector(string: URL name, int: URL visit count)</b></br>
 </p>
-
-
 <p align="center">
   <img src="images/class_diagram.png"/>
 </p>
