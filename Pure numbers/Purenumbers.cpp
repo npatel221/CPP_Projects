@@ -3,6 +3,11 @@
 
 using namespace std;
 
+bool isEven(int num)
+{
+    
+}
+
 int main()
 {
     // Get # of test cases from the User. T value
@@ -15,6 +20,6 @@ int main()
         return 1; // Terminate execution with an error
     }
 
-    
+
     return 0;
 }
