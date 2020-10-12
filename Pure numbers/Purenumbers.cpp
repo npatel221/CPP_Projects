@@ -1,7 +1,6 @@
 #include <iostream> // for User IO
 #include <math.h> // for math operations
-#include <algorithm>
-#include <typeinfo>
+#include <algorithm> // for reverse string algorithm
 
 using namespace std;
 
@@ -33,33 +32,40 @@ bool checkDigits(int num)
 bool isPalindrome(int num)
 {
     string temp = to_string(num); // convert num to string
-    string first_half = temp.substr(0,temp.size()/2); // extract first half
-    string second_half = temp.substr(temp.size()/2, temp.size()); // extract second half
+
+    // Divide the string into 2 seperate string at middle
+    string first_half = temp.substr(0,temp.size()/2); // extract first half = [0, size()/2)
+    string second_half = temp.substr(temp.size()/2, temp.size()); // extract second half = [size()/2, size())
     
     reverse(second_half.begin(), second_half.end()); // reverse the second half
     return (first_half == second_half); // check if the first half equals the reverse second half of the string
 }
 
+// This function calculates and returns the Nth pure number
 int getNPurenum(int nValue)
 {
     string pureNumString = "";
+    // Calculate Right half of Nth pure num algorithm
     while(nValue > 0)
     {
         nValue--;
-        if(nValue%2 == 0)
+        if(nValue%2 == 0) // even append 4
         {
             pureNumString.append("4"); // Add 4
         }
-        else
+        else // odd append 5
         {
             pureNumString.append("5"); // Add 5
         }
-        nValue = nValue/2;        
+        nValue = floor(nValue/2); // divide by 2 then round down using floor function        
     }
-    string second_half = pureNumString; // Return
-    reverse(pureNumString.begin(), pureNumString.end());
-    pureNumString.append(second_half);
-    return stoi(pureNumString);
+
+    // Generate palindrome string for the left half side
+    string second_half = pureNumString; // save a copy
+    reverse(pureNumString.begin(), pureNumString.end()); // flip to get left side
+    pureNumString.append(second_half); // merge left + right side
+
+    return stoi(pureNumString); // convert string to int then return it
 }
 
 int main()
@@ -74,20 +80,24 @@ int main()
         return 1; // Terminate execution with an error
     }
 
-    int pureNumArray[numTestCases];
+    int pureNumArray[numTestCases]; // int array to hold all Nth pure numbers
+
+    // Get N number whose pure number is to be calculated
     for (int i = 0; i < numTestCases; i++)
     {
+        // Get N from the user and store it in temp
         int temp;
         cin >> temp;
+
         // Check if the input is within the limits as required
         if ((temp < 1) or (temp > pow(10, 6)))
         {
             return 1; // Terminate execution with an error
         }
 
-        pureNumArray[i] = getNPurenum(temp);
+        pureNumArray[i] = getNPurenum(temp); // Calculate Nth pure num and add it to array
 
-        // Test for conditions
+        // Test for 3 conditions to validate its a pure number
         if (isEven(pureNumArray[i]) && checkDigits(pureNumArray[i]) && isPalindrome(pureNumArray[i]))
         {
             continue;
