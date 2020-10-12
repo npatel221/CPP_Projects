@@ -1,6 +1,7 @@
 #include <iostream> // for User IO
 #include <math.h> // for math operations
 #include <algorithm>
+#include <typeinfo>
 
 using namespace std;
 
@@ -39,6 +40,28 @@ bool isPalindrome(int num)
     return (first_half == second_half); // check if the first half equals the reverse second half of the string
 }
 
+int getNPurenum(int nValue)
+{
+    string pureNumString = "";
+    while(nValue > 0)
+    {
+        nValue--;
+        if(nValue%2 == 0)
+        {
+            pureNumString.append("4"); // Add 4
+        }
+        else
+        {
+            pureNumString.append("5"); // Add 5
+        }
+        nValue = nValue/2;        
+    }
+    string second_half = pureNumString; // Return
+    reverse(pureNumString.begin(), pureNumString.end());
+    pureNumString.append(second_half);
+    return stoi(pureNumString);
+}
+
 int main()
 {
     // Get # of test cases from the User. T value
@@ -51,6 +74,34 @@ int main()
         return 1; // Terminate execution with an error
     }
 
-    cout << isPalindrome(4554) << endl;
+    int pureNumArray[numTestCases];
+    for (int i = 0; i < numTestCases; i++)
+    {
+        int temp;
+        cin >> temp;
+        // Check if the input is within the limits as required
+        if ((temp < 1) or (temp > pow(10, 6)))
+        {
+            return 1; // Terminate execution with an error
+        }
+
+        pureNumArray[i] = getNPurenum(temp);
+
+        // Test for conditions
+        if (isEven(pureNumArray[i]) && checkDigits(pureNumArray[i]) && isPalindrome(pureNumArray[i]))
+        {
+            continue;
+        }
+        else
+        {
+            return 1; // Terminate execution with error
+        }
+    }
+
+    // Print Nth pure number from the array
+    for (int i = 0; i < numTestCases; i++)
+    {
+        cout << pureNumArray[i] << endl;
+    }
     return 0;
 }
