@@ -19,11 +19,29 @@ Folder Structure
 
 ### Purpose <a name="Purpose"></a>
 
+Develop a program that finds the **<em>N<sup>th</sup></em>** pure number, where **<em>N</em>** is an integer provided by the user. A pure number must satisfy the following properties:
+
+1. It comprises of only **4** and **5**.
+2. It is a **palindrome** number.
+3. The number of digits in a pure number is **even**.
+
+For example, 4444, 5445, 44 are pure numbers while 12, 444, 4545 are not. Pure numbers are to be generated in an ascending order. So, purenumber[1] < purenumber[2].
+
+The first few elements in the list are as follows: 44, 55, 4444, ....
+
 **Input Format** <a name="Input_Format"></a>
+
+- First line: **<em>T</em>** denoting the number of test cases
+- Next **<em>T</em>** lines: A number **<em>N</em>**
 
 **Output Format** <a name="Output_Format"></a>
 
+- Print the **<em>N<sup>th</sup></em>** pure number.
+
 **Constraints** <a name="Constraints"></a>
+
+1 &le; **<em>T</em>** &le; 10<sup>6</sup></br>
+1 &le; **<em>N</em>** &le; 10<sup>6</sup>
 
 **Expected Output** <a name="Expected_Output"></a>
 
@@ -44,6 +62,9 @@ Use the provided `Makefile` and `make` command to automatically compile the C++ 
 `make clean`: removes all of the compiled files, `Purenumbers`. Keeps the source code intact.
 
 ### Program Demo <a name="Program_Demo"></a>
+<p align="center">
+  <img src="images/Purenumbers_Demo.gif"/>
+</p>
 
 ### Code <a name="Code"></a>
 ```cpp
