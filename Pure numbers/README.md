@@ -2,7 +2,12 @@
 
 Folder Structure
 ```
-
+Pure numbers
+|  images (contains images used by the README.md file)
+|  Makefile (helpful file for compiling the C++ program)
+|  Purenumbers.cpp (C++ source code file)
+|  README.md (contains information about the program)
+|  out_test (bash script file for automatic input testing)
 ```
 
 ### Table of Contents
@@ -45,7 +50,16 @@ The first few elements in the list are as follows: 44, 55, 4444, ....
 
 **Expected Output** <a name="Expected_Output"></a>
 
+| Sample Input  | Sample Output     |
+|:------------: |:-------------:    |
+|       3       |       44          |
+|       1       |       55          |
+|       2       |      4444         |
+|       3       |                   |
+
 **Explanation** <a name="Explanation"></a>
+
+Here, T=3 meaning there are 3 test cases. In the 1<sup>st</sup> test case N=1, so we have to print the 1<sup>st</sup> pure number which is 44. Similarly, in 2<sup>nd</sup> and 3<sup>rd</sup> Test cases, we have to print the 2<sup>nd</sup> and 3<sup>rd</sup> pure number in the series. Hence, we have to print 55 and 4444 respectively.
 
 ### Extracted Requirements <a name="Extracted_Requirements"></a>
 
