@@ -50,17 +50,12 @@ The first few elements in the list are as follows: 44, 55, 4444, ....
 
 **Expected Output** <a name="Expected_Output"></a>
 
-<center>
-
 | Sample Input  | Sample Output     |
 |:------------: |:-------------:    |
 |       3       |       44          |
 |       1       |       55          |
 |       2       |      4444         |
 |       3       |                   |
-
-</center>
-
 
 **Explanation** <a name="Explanation"></a>
 
