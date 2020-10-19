@@ -73,7 +73,7 @@ Use the provided `Makefile` and `make` command to automatically compile the C++ 
 
 `make test`: compiles the C++ file into an executable file, `Purenumbers` and provides the `Purenumbers` with sample input from the bash script `out_test`
 
-`make clean`: removes all of the compiled files, `Purenumbers`. Keeps the source code intact.
+`make clean`: removes all of the compiled files, `Purenumbers`. Keeps the source code intact
 
 ### Program Demo <a name="Program_Demo"></a>
 <p align="center">
