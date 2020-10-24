@@ -68,10 +68,27 @@ Here, **<em>T</em>**=3 meaning there are 3 test cases. In the 1<sup>st</sup> tes
     3.1. Only contains 4 and 5 &rightarrow; all characters of the pure number string can only contain 4 and 5.<br>
     3.2. Palindrome number &rightarrow; first half of the pure number string = reversed second half string of the pure number.<br>
     3.3. Number of digits are even &rightarrow; length of the pure number string % 2 = 0 (even condition check).<br>
-4. Increasing order of Pure number &rightarrow; purenumber[1] < purenumber [2] (pure number must be increasing)<br>
+4. Increasing order of Pure number &rightarrow; purenumber[1] &lt; purenumber [2] (pure number must be increasing).<br>
 
 ### Algorithm & Pseudocode <a name="Algorithm_&_Pseudocode"></a><hr>
+If we look at the first 10 pure numbers, this is what it looks like.
 
+|  N    | Nth Pure Number   |
+|:--:   |:---------------:  |
+|  1    |        44         |
+|  2    |        55         |
+|  3    |       4444        |
+|  4    |       4554        |
+|  5    |       5445        |
+|  6    |       5555        |
+|  7    |      444444       |
+|  8    |      445544       |
+|  9    |      454454       |
+| 10    |      455554       |
+
+<p align="center">
+  <img src="images/Algorithm_1st_index.png"/>
+</p>
 
 ### Run Instructions <a name="Run_Instructions"></a><hr>
 Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./Purenumbers` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
