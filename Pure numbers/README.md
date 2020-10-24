@@ -10,20 +10,20 @@ Pure numbers
 |  out_test (bash script file for automatic input testing)
 ```
 
-### Table of Contents
-1. [Purpose](#Purpose)</br>
-   1.1. [Input Format](#Input_Format)</br>
-   1.2. [Output Format](#Output_Format)</br>
-   1.3. [Constraints](#Constraints)</br>
-   1.4. [Expected Output](#Expected_Output)</br>
-   1.5. [Explanation](#Explanation)</br>
-2. [Extracted Requirements](#Extracted_Requirements)
-3. [Run Instructions](#Run_Instructions)
-4. [Program Demo](#Program_Demo)
-5. [Code](#Code)
+### Table of Contents<hr>
+1. [Purpose](#Purpose)<br>
+   1.1. [Input Format](#Input_Format)<br>
+   1.2. [Output Format](#Output_Format)<br>
+   1.3. [Constraints](#Constraints)<br>
+   1.4. [Expected Output](#Expected_Output)<br>
+   1.5. [Explanation](#Explanation)<br>
+2. [Extracted Requirements](#Extracted_Requirements)<br>
+3. [Algorithm & Pseudocode](#Algorithm_&_Pseudocode)<br>
+4. [Run Instructions](#Run_Instructions)<br>
+5. [Program Demo](#Program_Demo)<br>
+6. [Code](#Code)<br>
 
-### Purpose <a name="Purpose"></a>
-
+### Purpose <a name="Purpose"></a><hr>
 Develop a program that finds the **<em>N<sup>th</sup></em>** pure number, where **<em>N</em>** is an integer provided by the user. A pure number must satisfy the following properties:
 
 1. It comprises of only **4** and **5**.
@@ -36,8 +36,8 @@ The first few elements in the list are as follows: 44, 55, 4444, ....
 
 **Input Format** <a name="Input_Format"></a>
 
-- First line: **<em>T</em>** denoting the number of test cases
-- Next **<em>T</em>** lines: A number **<em>N</em>**
+- First line: **<em>T</em>** denoting the number of test cases.
+- Next **<em>T</em>** lines: A number **<em>N</em>**.
 
 **Output Format** <a name="Output_Format"></a>
 
@@ -45,7 +45,7 @@ The first few elements in the list are as follows: 44, 55, 4444, ....
 
 **Constraints** <a name="Constraints"></a>
 
-1 &le; **<em>T</em>** &le; 10<sup>6</sup></br>
+1 &le; **<em>T</em>** &le; 10<sup>6</sup><br>
 1 &le; **<em>N</em>** &le; 10<sup>6</sup>
 
 **Expected Output** <a name="Expected_Output"></a>
@@ -59,12 +59,21 @@ The first few elements in the list are as follows: 44, 55, 4444, ....
 
 **Explanation** <a name="Explanation"></a>
 
-Here, T=3 meaning there are 3 test cases. In the 1<sup>st</sup> test case N=1, so we have to print the 1<sup>st</sup> pure number which is 44. Similarly, in 2<sup>nd</sup> and 3<sup>rd</sup> Test cases, we have to print the 2<sup>nd</sup> and 3<sup>rd</sup> pure number in the series. Hence, we have to print 55 and 4444 respectively.
+Here, **<em>T</em>**=3 meaning there are 3 test cases. In the 1<sup>st</sup> test case **<em>N</em>**=1, so we have to print the 1<sup>st</sup> pure number which is 44. Similarly, in 2<sup>nd</sup> and 3<sup>rd</sup> Test cases, we have to print the 2<sup>nd</sup> and 3<sup>rd</sup> pure number in the series. Hence, we have to print 55 and 4444 respectively.
 
-### Extracted Requirements <a name="Extracted_Requirements"></a>
+### Extracted Requirements <a name="Extracted_Requirements"></a><hr>
+1. **<em>T</em>** = number of test cases the user will enter. In other words, number of pure numbers to be determined &rightarrow; type int.<br>
+2. **<em>N</em>** = number whose N<sup>th</sup> pure number to be calculated. &rightarrow; type int.<br>
+3. Pure Number &rightarrow; type string (later convert it to type int).<br>
+    3.1. Only contains 4 and 5 &rightarrow; all characters of the pure number string can only contain 4 and 5.<br>
+    3.2. Palindrome number &rightarrow; first half of the pure number string = reversed second half string of the pure number.<br>
+    3.3. Number of digits are even &rightarrow; length of the pure number string % 2 = 0 (even condition check).<br>
+4. Increasing order of Pure number &rightarrow; purenumber[1] < purenumber [2] (pure number must be increasing)<br>
 
-### Run Instructions <a name="Run_Instructions"></a>
+### Algorithm & Pseudocode <a name="Algorithm_&_Pseudocode"></a><hr>
 
+
+### Run Instructions <a name="Run_Instructions"></a><hr>
 Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./Purenumbers` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
 
 `make all`: compiles the C++ file into an executable file, `Purenumbers`
@@ -75,12 +84,12 @@ Use the provided `Makefile` and `make` command to automatically compile the C++ 
 
 `make clean`: removes all of the compiled files, `Purenumbers`. Keeps the source code intact
 
-### Program Demo <a name="Program_Demo"></a>
+### Program Demo <a name="Program_Demo"></a><hr>
 <p align="center">
   <img src="images/Purenumbers_Demo.gif"/>
 </p>
 
-### Code <a name="Code"></a>
+### Code <a name="Code"></a><hr>
 ```cpp
 #include <iostream> // for User IO
 #include <math.h> // for math operations
