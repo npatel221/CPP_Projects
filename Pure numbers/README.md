@@ -86,7 +86,7 @@ If we look at the first 10 pure numbers, this is what it looks like.
 |  9    |      454454       |
 | 10    |      455554       |
 
-| <p align="left">   <img src="images/Algorithm_1st_index.png" width="300" height="250"/> </p>  | <p align="left">   <img src="images/Algorithm_2nd_index.png" width="700" height="250"/> </p>  |
+| <p align="left">   <img src="images/Algorithm_1st_index.png" width="300" height="300"/> </p>  | <p align="left">   <img src="images/Algorithm_2nd_index.png" width="700" height="300"/> </p>  |
 |:-:    |:-:    |
 | **Figure 1**  | **Figure 2**  |
 
