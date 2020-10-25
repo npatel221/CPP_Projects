@@ -86,14 +86,9 @@ If we look at the first 10 pure numbers, this is what it looks like.
 |  9    |      454454       |
 | 10    |      455554       |
 
-<p align="left">
-  <img src="images/Algorithm_1st_index.png" width="300" height="300"/>
-</p>
-
-<p align="left">
-  <img src="images/Algorithm_2nd_index.png" width="700" height="300"/>
-</p>
-
+| <p align="left">   <img src="images/Algorithm_1st_index.png" width="300" height="250"/> </p>  | <p align="left">   <img src="images/Algorithm_2nd_index.png" width="700" height="250"/> </p>  |
+|:-:    |:-:    |
+| **Figure 1**  | **Figure 2**  |
 
 ### Run Instructions <a name="Run_Instructions"></a><hr>
 Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./Purenumbers` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
