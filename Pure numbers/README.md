@@ -86,9 +86,17 @@ If we look at the first 10 pure numbers, this is what it looks like.
 |  9    |      454454       |
 | 10    |      455554       |
 
+Now if we separate a pure number at the middle into two parts: first half and second half. We can start to notice a pattern in the second half of the pure number as illustrated in **Figure 1** and **Figure 2** below.
+
 | <p align="left">   <img src="images/Algorithm_1st_index.png" width="300" height="300"/> </p>  | <p align="left">   <img src="images/Algorithm_2nd_index.png" width="700" height="300"/> </p>  |
 |:-:    |:-:    |
 | **Figure 1**  | **Figure 2**  |
+
+The very first digit of the second half string of the pure number, we can notice that **4** appears on a odd N<sup>th</sup> pure number and **5** appears on the even N<sup>th</sup> pure number. This pattern is highlighted in **Figure 1** for illustration. So, if we are to generate an N<sup>th</sup> pure number and if N is even then, the first digit of the pure number will be **5** and if odd then it will be **4**. Then the remaining digits in the second half string of the N<sup>th</sup> pure number are equivalent to the floor[(N-1)/2] or rounddown[(N-1)/2], as indicated by the arrows in **Figure 2**.
+
+For example, lets say we are calculating the 10<sup>th</sup> pure number, so N = 10. Since 10 is an even number, the first digit of the second half of the pure number string will be 5. Then we get result = 4, from the formula: floor[(10-1)/2]. Now we calculate the 4<sup>th</sup> pure number to get the remaining digits in the second half string of our 10<sup>th</sup> pure number calculation. Since 4 is an even number, the first digit of the second half string of the 4<sup>th</sup> pure number will be 5 as well. Then we get result = 1, from the formula: floor[(4-1)/2]. Now we calculate the second half of the 1<sup>st</sup> pure number. Since 1 is an odd number, the first digit of the second half string of the 1<sup>st</sup> pure number will be 4. Then we get result = 0, from the formula: floor[(1-1)/2] at which point the calculation will terminate. Hence, the second half of the 10<sup>th</sup> pure number is 554. Now that we have the second half of the 10<sup>th</sup> pure number, the first half is a reverse of second half based on the condition that pure numbers are even length, only contain 4 and 5, and are palindrome. Once reversed and combined (i.e. first half + second half), we get the 10<sub>th</sub> pure number to be 455554, which can be confirmed by looking at the 10<sup>th</sup> row of **Figure 2**.
+
+$$I = \int \rho R^{2} dV$$
 
 ### Run Instructions <a name="Run_Instructions"></a><hr>
 Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./Purenumbers` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
