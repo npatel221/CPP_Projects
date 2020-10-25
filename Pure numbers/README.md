@@ -4,6 +4,9 @@ Folder Structure
 ```
 Pure numbers
 |  images (contains images used by the README.md file)
+   |--Algorithm_1st_index.png
+   |--Algorithm_2nd_index.png
+   |--Purenumbers_Demo.gif
 |  Makefile (helpful file for compiling the C++ program)
 |  Purenumbers.cpp (C++ source code file)
 |  README.md (contains information about the program)
@@ -96,7 +99,30 @@ The very first digit of the second half string of the pure number, we can notice
 
 For example, lets say we are calculating the 10<sup>th</sup> pure number, so N = 10. Since 10 is an even number, the first digit of the second half of the pure number string will be 5. Then we get result = 4, from the formula: floor[(10-1)/2]. Now we calculate the 4<sup>th</sup> pure number to get the remaining digits in the second half string of our 10<sup>th</sup> pure number calculation. Since 4 is an even number, the first digit of the second half string of the 4<sup>th</sup> pure number will be 5 as well. Then we get result = 1, from the formula: floor[(4-1)/2]. Now we calculate the second half of the 1<sup>st</sup> pure number. Since 1 is an odd number, the first digit of the second half string of the 1<sup>st</sup> pure number will be 4. Then we get result = 0, from the formula: floor[(1-1)/2] at which point the calculation will terminate. Hence, the second half of the 10<sup>th</sup> pure number is 554. Now that we have the second half of the 10<sup>th</sup> pure number, the first half is a reverse of second half based on the condition that pure numbers are even length, only contain 4 and 5, and are palindrome. Once reversed and combined (i.e. first half + second half), we get the 10<sub>th</sub> pure number to be 455554, which can be confirmed by looking at the 10<sup>th</sup> row of **Figure 2**.
 
-$$I = \int \rho R^{2} dV$$
+```
+Pure number generator algorithm pseudocode
+1.    initialize secondPureNumString = "";
+2.    while (n>0)
+3.    {
+4.        Decrement n;
+5.        if (n is even)
+6.        {
+7.            Append 4 to the secondPureNumString;
+8.        }
+9.        else
+10.       {
+11.           Append 5 to the secondPureNumString;
+12.       }
+13.       n = floor(n/2);
+14.   }
+15.
+16.   firstPureNumString = reverse of secondPureNumString;
+17.   PureNumString = firstPureNumString + secondPureNumString;
+18.   PureNumInt = integer conversion of PureNumString;
+19.   return PureNumInt;
+```
+
+Since `1%2 = 1` and not `0`, we will decrement n value by `1` as shown in Line # 4 of the algorithm, to have `0%2 = 0` as the terminating condition. Which implies that #4 to be added on even N and #5 to be added on odd N to compensate of -1.
 
 ### Run Instructions <a name="Run_Instructions"></a><hr>
 Use the provided `Makefile` and `make` command to automatically compile the C++ code on your linux machine. After the compile is successful you can run the program using `./Purenumbers` command in your native terminal. Below is a description of all the supported make commands by the provided makefile.
