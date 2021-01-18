@@ -13,39 +13,45 @@ using namespace std;
 class Toaster
 {
 public:
-    Toaster();  // constructor
-    ~Toaster(); // destructor
-    void setMode(string desiredMode);
+    Toaster(string desiredMode, unsigned short desiredIntLevel); // constructor
+    ~Toaster();                                                  // destructor
     string getMode() const;
-    void setIntensityLevel(unsigned short desiredIntLevel);
     unsigned short getIntensityLevel() const;
     void getFilamentStatus() const;
     bool run();
 
 private:
-    enum mode { BREAD, BAGEL } toasterMode; // declare enum type instantiate as toasterMode
-    unsigned short intLevel; // intensity level from 1 to 10
+    enum mode
+    {
+        BREAD,
+        BAGEL
+    } toasterMode;                                                           // declare enum type instantiate as toasterMode
+    unsigned short intLevel;                                                 // intensity level from 1 to 10
     bool leftOutFilament, leftInFilament, rightInFilament, rightOutFilament; // outputs
-    void setFilament(); // turn on appropriate filaments
-    void resetFilament(); // turn off all filaments
+    void setFilament();                                                      // turn on appropriate filaments
+    void resetFilament();                                                    // turn off all filaments
     double secondsElapsed, secondsToDelay, starttime;
+    void setMode(string desiredMode);
+    void setIntensityLevel(unsigned short desiredIntLevel);
+    bool timerFlag; // true timer started
 
 protected:
 };
 
 // Constructor
-Toaster::Toaster()
+Toaster::Toaster(string desiredMode, unsigned short desiredIntLevel)
 {
-    //cout << "Toaster object created" << endl;
+    // Set desired mode
+    setMode(desiredMode);
 
-    // default settings
-    this->setIntensityLevel(1);
-    this->setMode("BREAD");
+    // Set desired interval
+    setIntensityLevel(desiredIntLevel);
 
+    // Reset all filament outputs
     resetFilament();
 
-    starttime = time(NULL); //Start timer
-    cout << "Current Time: " << starttime << endl;
+    // Reset timer flag
+    timerFlag = false;
 }
 
 // Destructor
@@ -152,45 +158,72 @@ void Toaster::getFilamentStatus() const
 
 bool Toaster::run()
 {
-    //secondsElapsed = double(clock() - timer) / CLOCKS_PER_SEC; // calculate time elapsed
-    secondsElapsed = (time(NULL) - starttime);
-    cout << "Seconds Elapsed: " << secondsElapsed << endl;
-    if (secondsElapsed >= secondsToDelay) // time passed toast done
+    if (timerFlag == false) // start timer if not already started
     {
-        resetFilament();
-        return true;
+        starttime = time(NULL); // current time
+        timerFlag = true; // set flag to indicate timer started
     }
     else
     {
-        setFilament();
-        return false;
+        secondsElapsed = (time(NULL) - starttime);
+        cout << "Seconds Elapsed: " << secondsElapsed << endl;
+        if (secondsElapsed >= secondsToDelay) // time passed toast done
+        {
+            resetFilament(); // perform eject
+            return true;
+        }
+        else
+        {
+            setFilament(); // perform toasting
+            return false;
+        }
     }
 }
 
 int main()
 {
-    cout << "Welcome to Toaster Program!" << endl;
-    
     string modeSelection;
     unsigned short levelSelection;
 
     cout << "\nMode of Operation (BREAD or BAGEL): ";
     cin >> modeSelection;
+    while (modeSelection != "BREAD" && modeSelection != "BAGEL")
+    {
+        cout << "\nMode of Operation (BREAD or BAGEL): ";
+        cin >> modeSelection;
+    }
 
     cout << "\nIntensity Level (1 - 10): ";
     cin >> levelSelection;
-
-    Toaster myToasterInst;
-
-    myToasterInst.setMode(modeSelection);
-    myToasterInst.setIntensityLevel(levelSelection);
-    //cout << myToasterInst.getMode() << endl;
-    //myToasterInst.setIntensityLevel(11);
-    //myToasterInst.getFilamentStatus();
-
-    while (!myToasterInst.run())
+    while (levelSelection < 1 || levelSelection > 10)
     {
-        myToasterInst.getFilamentStatus();
+        cout << "\nIntensity Level (1 - 10): ";
+        cin >> levelSelection;
+    }
+
+    Toaster *myToasterInst = new Toaster(modeSelection,levelSelection);
+
+    bool interruptToast = true;
+    while (interruptToast)
+    {
+        myToasterInst->getFilamentStatus();
+        if (cin.get() == 'a') // press a to abort operation
+        {
+            interruptToast = false;
+            cout << "Toast interrupted, Eject operation" << endl;
+        }
+        else // perform toast
+        {
+            if(myToasterInst->run() == false)
+            {
+                cout << "Toasting in progress" << endl;
+            }
+            else
+            {
+                cout << "Toast completed" << endl;
+                interruptToast = false;
+            }
+        }
     }
     return 0;
 }
