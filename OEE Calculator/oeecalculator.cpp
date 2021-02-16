@@ -89,14 +89,16 @@ int main(int argc, char* argv[])
                 << argc << " provided.\n";
         return 1;
     }
+
     float planned_production_time = atof(argv[1]);
     float stop_time = atof(argv[2]);
     float ideal_cycle_time = atof(argv[3]);
     unsigned int good_count = atoi(argv[4]);
     unsigned int total_count = atoi(argv[5]);
 
+    float availability, performance, quality, oee;
 
-    auto [availability, performance, quality, oee] = CalculateOEE(planned_production_time, 
+    tie(availability, performance, quality, oee) = CalculateOEE(planned_production_time, 
                                                                     stop_time, ideal_cycle_time, 
                                                                     good_count, total_count);
 
@@ -105,6 +107,6 @@ int main(int argc, char* argv[])
     cout << "Performance: " << performance*100 << " %\n";
     cout << "Quality: " << quality*100 << " %\n";
     cout << "OEE: " << oee*100 << " %\n";
-    
+
     return 0; // successful execution
 }
