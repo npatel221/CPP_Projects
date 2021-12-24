@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "5"
+echo "aaaaa"
+echo "bbbbb"
+echo "ccccc"
+echo "ddddd"
+echo "eeeee"
+echo "3"
+echo "3 3 3"
+echo "1 5 16"
+echo "3 5 15"
