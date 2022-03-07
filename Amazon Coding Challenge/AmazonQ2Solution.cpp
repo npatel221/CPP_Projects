@@ -84,12 +84,19 @@ vector<vector<int>> applicationPairs(int deviceCapacity, vector<vector<int>> for
             }
         }
     }
-
-    // drop the consumption
-    for (auto iter = optimalPair.begin(); iter != optimalPair.end(); iter++)
+    
+    if (optimalPair.size() == 0) // empty and no optimal pair exists
     {
-        (*iter).erase((*iter).begin()); // remove consumption field from sub vector
-        (*iter).shrink_to_fit(); // reduce capacity
+        optimalPair = {{}};
+    }
+    else
+    {
+        // drop the consumption
+        for (auto iter = optimalPair.begin(); iter != optimalPair.end(); iter++)
+        {
+            (*iter).erase((*iter).begin()); // remove consumption field from sub vector
+            (*iter).shrink_to_fit(); // reduce capacity
+        }
     }
 
     return optimalPair;
